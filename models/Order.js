@@ -17,7 +17,10 @@ const OrderSchema = new mongoose.Schema({
         size: String,
         quantity: Number
 
-    }]
+    }],status:{
+        type: String,
+        default: 'pending'
+    }
 },
     { timestamps: true }
 )
