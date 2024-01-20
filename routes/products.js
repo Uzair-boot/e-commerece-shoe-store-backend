@@ -90,6 +90,7 @@ router.get('/', async (req, res) => {
 //         price: 71,
 //         discountedPrice: 60,
 //         colors: ["Shadow Brown ", "Preloved Brown ", " Cloud White"],
+           
 //         sizes: [
 //             "UK 6",
 //             "UK 6.5",
