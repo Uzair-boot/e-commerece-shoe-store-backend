@@ -1,54 +1,66 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        require: true,
-        min: 3,
-        max: 20,
-        unique: true,
+const UserSchema = new mongoose.Schema(
+  {
+    patientName: {
+      type: String,
+      require: true,
+      min: 3,
+      max: 20,
+    },
+    contact: {
+      type: String,
+      unique: true,
     },
 
-    email: {
-        type: String,
-        required: true,
-        max: 50,
-        unique: true,
+    secondContact: {
+      type: String,
+      unique: true,
+    },
+    address: {
+      type: String,
+      max: 50,
+    },
+
+    ref: {
+      type: String,
+    },
+    booldPressure: {
+      type: String,
+    },
+
+    diabetes: {
+      type: String,
+    },
+
+    disease: {
+      type: String,
+    },
+    remarks: {
+      type: String,
     },
 
     password: {
-        type: String,
-        required: true,
-        min: 6,
+      type: String,
+      default: "123456789",
+      min: 6,
     },
 
     isAdmin: {
-        type: Boolean,
-        default: false
-    },
-    streetAddress: {
-        type: String,
-        max: 50
+      type: Boolean,
+      default: false,
     },
     city: {
-        type: String,
-        max: 50
+      type: String,
+      max: 50,
     },
-    state: {
-        type: String,
-        max: 50
+    appiontments: {
+      type: Array,
+      default: [],
     },
-    country: {
-        type: String,
-        max: 50
-    },
-    postalCode: {
-        type: String,
-        max: 50
-    },
-},
+  },
 
-    { timestamps: true }
-)
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("User", UserSchema);
